@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.1/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.1/addons/p5.dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.1/addons/p5.sound.min.js"></script>
+    <!-- import the webpage's stylesheet -->
+    <style>
+        body {
+            font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
+            margin: 2em;
+            font-size: 20px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <h2>
+        Variation on Barack Obama’s 2009 Nobel Peace Prize Speech
+
+    </h2>
+    <p>
+    </p>
+    <script>
+        let txt;
+        let array = [];
+
+        function preload() {
+            txt = loadStrings('t.txt');
+        }
+
+        function setup() {
+            noCanvas();
+            //console.log();
+
+            let alltxt = join(txt, ' ');
+            let words = alltxt.split(' ');
+
+            console.log(words.length);
+
+            for (let i = 0; i < words.length; i++) {
+                var num = Math.floor(Math.random() * words.length);
+                array.push(words[num]);
+
+            }
+
+            let final = join(array, ' ');
+            createP(final);
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>
