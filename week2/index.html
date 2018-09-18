@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.1/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.1/addons/p5.dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.1/addons/p5.sound.min.js"></script>
+    <!-- import the webpage's stylesheet -->
+    <style>
+        body {
+            font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
+            margin: 2em;
+            font-size: 20px;
+        }
+
+        h2 {
+            padding-bottom: 32px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+
+<body>
+    <h2>
+        Variation on Barack Obama’s 2009 Nobel Peace Prize Speech
+    </h2>
+    <p>
+    </p>
+    <script>
+        let txt;
+        let array = [];
+        let arrayWrapper = [];
+        let wrapper = [];
+        let sentence = [];
+        let words;
+
+        function preload() {
+            txt = loadStrings('t.txt');
+        }
+
+        function setup() {
+            noCanvas();
+
+            let alltxt = join(txt, ' ');
+            words = alltxt.split(/\s/);
+
+
+
+            for (let i = 0; i < (txt.length + 1) / 2; i++) {
+
+                sentence = txt[i * 2].split(/\s/);
+
+                wrapper[i] = sentence;
+
+                for (let j = 0; j < wrapper[i].length; j++) {
+
+                    var num = Math.floor(Math.random() * wrapper[i].length);
+                    var element = wrapper[i][num];
+
+
+                    var span = createSpan(wrapper[i][j] + ' ');
+                    //                    var span = createSpan(element +' ');      
+                    span.mouseOver(highlight);
+
+                    //                    array.push(element);
+
+                }
+                createP(' ');
+            }
+
+                        console.log(wrapper[1][10]);
+
+        }
+
+
+
+        function highlight() {
+            //            console.log(wrapper);
+//                        let phrase = this.html().slice(0, this.html().length-1);
+            
+                    var num = Math.floor(Math.random() * words.length);
+            
+                                this.html(words[num] + " "); 
+            
+            if(words[num] == wrapper[1][10]){
+                 this.html('*' + " "); 
+            }
+            
+            
+//                        for(let i=0 ; i<wrapper.length; i++){
+//                        var pos = wrapper[i].findIndex(k => k == phrase);  
+////                            if(pos != -1){
+////                        console.log(i);
+////                        console.log(pos);
+//                                
+//                var num = Math.floor(Math.random() * wrapper[i].length);
+//
+//                    this.html(wrapper[i][num]);
+//                                break;
+////                            }
+//                        }
+
+
+            //            for(let j=0 ; j<arrayWrapper.length; j++){
+            //            var posTwo = arrayWrapper[j].findIndex(k => k == phrase);  
+            //                if(posTwo != -1){
+            //            console.log(j);
+            //            console.log(posTwo);
+            //            console.log(wrapper[j][posTwo]);
+            ////              this.html(wrapper[j][posTwo]);
+            //        
+            //                    break;
+            //                }
+            //            }            
+
+
+
+            var c = color(82, 0, 255);
+            this.style('color', c);
+        }
+    </script>
+
+
+</body>
+
+</html>
