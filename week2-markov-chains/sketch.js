@@ -13,8 +13,8 @@ function preload() {
 function setup() {
     noCanvas();
 
-    // create a markov model w' n=4
-    markov = new RiMarkov(4);
+    // create a markov model w' n=16
+    markov = new RiMarkov(16);
 
     // load text into the model
     markov.loadText(data.join(' '));
