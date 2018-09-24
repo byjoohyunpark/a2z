@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Asteroids – Near Earth Object</title>
+    </head>
+    <style>
+        body{
+          background-color : black ;
+            color : white;
+            font-size: 14px;
+            margin-left: 20%;
+        }
+        #data{
+            position : fixed;
+            right : 20%;
+            bottom : 8%;
+        }
+        #wrapper{
+            position: sticky;
+        }
+    </style>
+<body>
+
+<h2>Near Earth Object(NEO) –a list of Asteroids based on their closest approach date to Earth</h2>
+ <br>
+ 
+ <div id="info">  
+ </div>
+ 
+  
+   <div id="wrapper">
+    <div id="data">
+         <p id="total"> </p>
+  <input id="today" type="date">
+  <input type="submit" onclick="call()" >
+      </div></div>
+      
+    <script src="sketch.js" type="text/javascript"></script>       
+</body>
+</html>
