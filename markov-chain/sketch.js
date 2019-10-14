@@ -27,20 +27,28 @@ function setup() {
         initial = createP(wrapper[i]);
 
         val[i] = RiTa.splitSentences(wrapper[i]);
-        console.log(val[i].length);
     }
 
 }
 
-window.addEventListener("click", generate);
 
-function generate() {
+
+function mouseClicked() {
+    reorganize();
+}
+
+function reorganize() {
     document.body.innerHTML = '<h2>Variation on Barack Obama’s 2009 Nobel Peace Prize Speech</h2>'
-
     for (let i = 0; i < wrapper.length; i++) {
-
         sentences = markov.generateSentences(val[i].length);
         let final = join(sentences, ' ');
         createP(final);
     }
 }
+
+$(function () {
+    $(window).bind("tap", tapHandler);
+    function tapHandler(event) {
+        reorganize();
+    }
+});
