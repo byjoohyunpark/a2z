@@ -34,7 +34,7 @@ function setup() {
 
 
 
-function mousePressed() {
+function mouseClicked() {
 
     document.body.innerHTML = '<h2>Variation on Barack Obama’s 2009 Nobel Peace Prize Speech</h2>'
 
