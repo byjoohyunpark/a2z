@@ -32,10 +32,9 @@ function setup() {
 
 }
 
+window.addEventListener("click", generate);
 
-
-function mouseClicked() {
-
+function generate() {
     document.body.innerHTML = '<h2>Variation on Barack Obama’s 2009 Nobel Peace Prize Speech</h2>'
 
     for (let i = 0; i < wrapper.length; i++) {
@@ -44,6 +43,4 @@ function mouseClicked() {
         let final = join(sentences, ' ');
         createP(final);
     }
-
-
 }
